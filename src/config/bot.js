@@ -24,7 +24,7 @@ export const botConfig = {
     activities: [
       {
         name: "Custom Status", // required by Discord API, not shown in the client
-        state: "stalking",     // this is what people actually see
+        state: "Gooning",     // this is what people actually see
         type: 4,               // Custom
       },
     ],
@@ -39,7 +39,7 @@ export const botConfig = {
     owners: process.env.OWNER_IDS?.split(",").map((id) => id.trim()).filter(Boolean) || [],
 
     // Default wait time between command uses (in seconds).
-    defaultCooldown: 3,
+    defaultCooldown: 0,
 
     // If true, old commands are removed before re-registering.
     deleteCommands: false,
@@ -61,9 +61,11 @@ export const botConfig = {
   applications: {
     // Default questions shown when someone fills out an application.
     defaultQuestions: [
-      { question: "What is your name?", required: true },
-      { question: "How old are you?", required: true },
-      { question: "Why do you want to join?", required: true },
+      { question: "name/surname?", required: true },
+      { question: "age?", required: true },
+      { question: "why do you want to be a mod?", required: true },
+      { question: "what will you bring more in this server by being a mod?", required: true },
+      { question: "do you have experience in moderation?", required: true },
     ],
 
     // Embed colors by application status.
